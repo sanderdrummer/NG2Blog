@@ -1,4 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { RouteSegment } from '@angular/router';
+
 import { WpApiServiceService } from '../wp-api-service.service';
 import { Post } from '../shared/post';
 
@@ -12,13 +14,23 @@ import { Post } from '../shared/post';
 export class PageComponent implements OnInit {
   wpApiServiceService:WpApiServiceService;
   page:Post;
+  id: string;
+  err: string;
   constructor(wpApiServiceService:WpApiServiceService) {
     this.wpApiServiceService = wpApiServiceService;
       this.page = new Post({});
+      this.err = '';
+      // this.id = routeParams.get('id') || 2;
   }
-
+    routerOnActivate(curr: RouteSegment) {
+        this.id = curr.getParam('id');
+    }
   ngOnInit() {
-      this.wpApiServiceService.getPage(2).subscribe((res) => {this.page = res; console.log(this.page );});
+      this.wpApiServiceService.getPage(this.id)
+          .subscribe(
+              (res) => {this.page = res;},
+              (err) => {this.err = `Fehler ${err.status} :(` || 'Fehler :(';}
+          );
 
   }
 }

@@ -11,16 +11,24 @@ export class WpApiServiceService {
       this.http = http;
   }
 
-  getPosts() {
+  getPosts(category) {
       return this.http
-          .get('http://localhost:3000/wordpress/wp-json/wp/v2/posts?category=all')
-          .map(res => res.json())
+          .get('http://localhost:3000/wordpress/wp-json/wp/v2/posts?category=' + category)
+          .map(res => res.json().map((rawPost) => new Post(rawPost)));
+
           // .share();
   }
 
   getPage(id) {
       return this.http
           .get('http://localhost:3000/wordpress/wp-json/wp/v2/pages/' + id)
+          .map(res => new Post(res.json()));
+          // .share();
+  }
+
+  getPost(id) {
+      return this.http
+          .get('http://localhost:3000/wordpress/wp-json/wp/v2/posts/' + id)
           .map(res => new Post(res.json()));
           // .share();
   }

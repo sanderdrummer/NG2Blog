@@ -13,9 +13,9 @@ import { PostsComponent } from './+posts';
   providers: [ROUTER_PROVIDERS]
 })
 @Routes([
-  {path: '/page', component: PageComponent},
-  {path: '/post', component: PostComponent},
-  {path: '/posts', component: PostsComponent}
+  {path: '/page/:id', component: PageComponent},
+  {path: '/post/:id', component: PostComponent},
+  {path: '/posts/:category', component: PostsComponent}
 ])
 export class NG2BlogAppComponent {
   title = 'ng2-blog works!';
