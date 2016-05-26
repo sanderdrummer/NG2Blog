@@ -1,5 +1,9 @@
 <h1>
   {{title}}
 </h1>
-
+<nav>
+    <a [routerLink]="['/page']">page</a>
+    <a [routerLink]="['/post']">post</a>
+    <a [routerLink]="['/posts']">posts</a>
+</nav>
 <router-outlet></router-outlet>
