@@ -14,6 +14,7 @@ import { RouteSegment } from '@angular/router';
 })
 export class PostComponent implements OnInit {
   @Input() post: Post;
+  @Input() excerpt: boolean;
   id: string;
   err: string;
 
@@ -34,6 +35,10 @@ export class PostComponent implements OnInit {
                   (err) => {this.err = `Fehler ${err.status} :(` || 'Fehler :(';}
               );
       }
+  }
+
+  showContent(){
+    this.excerpt = false;
   }
 
 }

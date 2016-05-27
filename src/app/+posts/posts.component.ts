@@ -19,20 +19,40 @@ export class PostsComponent implements OnInit {
     posts: Post[];
     category: string;
     err: string;
+    loading: boolean;
+    page: number;
   constructor(wpApiServiceService:WpApiServiceService) {
       this.wpApiServiceService = wpApiServiceService;
       this.posts =[];
       this.err = '';
+      this.page = 1;
   }
-
-  ngOnInit() {
-      this.wpApiServiceService.getPosts(this.category)
+  loadPosts(){
+    this.wpApiServiceService.getPosts(this.category, this.page)
           .subscribe(
-              (res) => {this.posts = res;},
-              (err) => {this.err = `Fehler ${err.status} :(` || 'Fehler :(';}
-          );
+        (res) => { 
+          this.posts = this.posts.concat(res);
+          if (res.length) {
+            this.loading = false; 
+          }
+        },
+      (err) => { 
+        this.err = `Fehler ${err.status} :(` || 'Fehler :('; 
+        this.loading = false; 
+      }
+    );
   }
-    routerOnActivate(curr: RouteSegment) {
-        this.category = curr.getParam('category');
+  ngOnInit() {
+    this.loadPosts();
+  }
+  routerOnActivate(curr: RouteSegment) {
+      this.category = curr.getParam('category');
+  }
+  loadOnScroll($event){
+    if (!this.loading) {
+      this.loading = true;  
+      this.page += 1;
+      this.loadPosts();
     }
+  }
 }

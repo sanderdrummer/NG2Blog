@@ -1,4 +1,10 @@
 <p>
   posts works!
 </p>
-<app-post *ngFor="let post of posts" [post]="post" ></app-post>
+<app-post 
+	(window:scroll)="loadOnScroll($event)" 
+	*ngFor="let post of posts" 
+	[excerpt] = true
+	[post]="post">
+	
+</app-post>

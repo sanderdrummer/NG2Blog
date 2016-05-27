@@ -11,9 +11,9 @@ export class WpApiServiceService {
       this.http = http;
   }
 
-  getPosts(category) {
+  getPosts(category, page) {
       return this.http
-          .get('http://localhost:3000/wordpress/wp-json/wp/v2/posts?category=' + category)
+          .get(`http://localhost:3000/wordpress/wp-json/wp/v2/posts?category=${category}&page=${page}`)
           .map(res => res.json().map((rawPost) => new Post(rawPost)));
 
           // .share();
