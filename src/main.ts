@@ -1,12 +1,9 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { HTTP_PROVIDERS } from '@angular/http';
-import 'rxjs/add/operator/map';
-import { enableProdMode } from '@angular/core';
-import { NG2BlogAppComponent, environment } from './app/';
+import {enableProdMode}  from '@angular/core';
+import {bootstrap}       from '@angular/platform-browser-dynamic'
+import {JSONP_PROVIDERS} from '@angular/http';
+import {AppComponent}    from './app/app.component'
+import {routerProviders} from './components/routes';
 
-if (environment.production) {
-  enableProdMode();
-}
 enableProdMode();
 
-bootstrap(NG2BlogAppComponent, [HTTP_PROVIDERS]);
+bootstrap(AppComponent, [JSONP_PROVIDERS, routerProviders]);

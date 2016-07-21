@@ -1,4 +1,3 @@
-dist/
-node_modules/
-tmp/
-typings/
+build
+node_modules
+typings
