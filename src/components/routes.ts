@@ -4,6 +4,7 @@
 
 import {provideRouter, RouterConfig} from '@angular/router'
 import {Home} from './Home/Home';
+import {Posts} from './Posts/Posts';
 
 const routes: RouterConfig = [
     {
@@ -14,6 +15,10 @@ const routes: RouterConfig = [
     {
         path: 'home',
         component: Home
+    },
+    {
+        path: 'posts',
+        component: Posts
     }
 ];
 
