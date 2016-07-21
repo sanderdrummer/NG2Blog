@@ -3,14 +3,22 @@
  */
 import { Component, OnInit } from '@angular/core';
 import {PostsTemplate} from './PostsTemplate';
+import {PostsService} from './PostsService';
 
 @Component({
     selector: 'posts',
-    template: PostsTemplate
+    template: PostsTemplate,
+    providers: [PostsService]
 })
 export class Posts implements OnInit {
-    constructor() { }
+    public postList: Object[];
+    constructor(private postsService:PostsService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.postsService.getPosts('')
+            .subscribe((list) =>{
+                this.postList = list;
+            });
+    }
 
 }
