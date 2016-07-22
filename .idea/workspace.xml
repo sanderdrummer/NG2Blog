@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbcc3122-5ee1-4888-ba0e-b1f087299fae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Media/Media.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Media/mediaService.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Media/mediaTemplate.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/Post/postTemplate.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.ts" afterPath="$PROJECT_DIR$/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Posts/Posts.ts" afterPath="$PROJECT_DIR$/src/components/Posts/Posts.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Search/searchBox.ts" afterPath="$PROJECT_DIR$/src/components/Search/searchBox.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Search/searchBoxTemplate.ts" afterPath="$PROJECT_DIR$/src/components/Search/searchBoxTemplate.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/routes.ts" afterPath="$PROJECT_DIR$/src/components/routes.ts" />
     </list>
     <ignored path="angular2-webpack-polyfill.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mediaTemplate.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mediaTemplate.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Media/mediaTemplate.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
@@ -108,26 +101,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pageService.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Page/pageService.ts">
+      <file leaf-file-name="postTemplate.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Post/postTemplate.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-              <folding>
-                <element signature="e#43#86#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchBox.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Search/searchBox.ts">
+      <file leaf-file-name="PostModel.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Post/PostModel.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="200">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -197,6 +186,7 @@
         <option value="$PROJECT_DIR$/src/components/routes.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/components/Media/mediaTemplate.ts" />
+        <option value="$PROJECT_DIR$/src/components/Post/postTemplate.ts" />
       </list>
     </option>
   </component>
@@ -352,6 +342,28 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Post" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular2-webpack-polyfill" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular2-webpack-polyfill" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Media" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -485,12 +497,12 @@
       <option name="presentableId" value="Default" />
       <updated>1469120187087</updated>
       <workItem from="1469120188408" duration="2123000" />
-      <workItem from="1469123404388" duration="14155000" />
+      <workItem from="1469123404388" duration="14869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16278000" />
+    <option name="totallyTimeSpent" value="16992000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="0" width="1460" height="1584" extended-state="0" />
@@ -712,14 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Post/PostModel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home/Home.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -916,6 +920,22 @@
             <element signature="e#0#42#0" expanded="false" />
             <marker date="1469220469863" expanded="true" signature="78:188" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Post/postTemplate.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Post/PostModel.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
