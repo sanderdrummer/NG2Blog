@@ -8,12 +8,24 @@ import {Router} from '@angular/router';
     directives: []
 })
 export class SearchBox implements OnInit {
-    constructor(private router:Router) { }
+    public show:boolean;
+    constructor(private router:Router) {
+        this.show = false;
+    }
 
     ngOnInit() {}
 
     submitSearch(query:string) {
         this.router.navigate(['search/'+query])
+        this.show = false;
+    }
+
+    showSearch(){
+        this.show = !this.show;
+    }
+
+    hideSearch(){
+        this.show = false;
     }
 
 }

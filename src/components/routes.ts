@@ -6,6 +6,7 @@ import {provideRouter, RouterConfig} from '@angular/router'
 import {Home} from './Home/Home';
 import {Posts} from './Posts/Posts';
 import {Page} from './Page/page';
+import {Media} from './Media/Media';
 
 const routes: RouterConfig = [
     {
@@ -28,6 +29,10 @@ const routes: RouterConfig = [
     {
         path: 'search/:search',
         component: Posts
+    },
+    {
+        path: 'media',
+        component: Media
     },
     {
         path: 'page/:id',

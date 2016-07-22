@@ -33,9 +33,7 @@ export class Posts implements OnInit {
         });
     }
 
-    ngOnInit() {
-        this.getPosts(1)
-    }
+    ngOnInit() {}
 
     getPosts(page:number) {
 

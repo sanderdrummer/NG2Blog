@@ -13,6 +13,7 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
         <a [routerLink]="['/posts', 'Band']">Band</a>
         <a [routerLink]="['/posts','Gigs']">Gigs</a>
         <a [routerLink]="['/page/2']">Test</a>
+        <a [routerLink]="['/media']">Medien</a>
 </nav>
     <router-outlet></router-outlet>
 </div>`,
