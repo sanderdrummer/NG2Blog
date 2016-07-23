@@ -14,13 +14,13 @@ import {ActivatedRoute} from '@angular/router';
 export class Media implements OnInit {
 
     public media: Object[];
+    public activeMedia: {};
 
     constructor(private mediaService:MediaService, router:ActivatedRoute) {
 
         router.params.subscribe((params:any) => {
             this.media = [];
             mediaService.getMedia().subscribe((res) => {
-                console.log(res);
                 this.media = res.json();
             });
         });
@@ -28,4 +28,11 @@ export class Media implements OnInit {
 
     ngOnInit() { }
 
+    selectMedia(image){
+        this.activeMedia = image.media_details.sizes.full.source_url;
+    }
+
+    close(){
+        this.activeMedia = null;
+    }
 }
