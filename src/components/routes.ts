@@ -7,6 +7,7 @@ import {Home} from './Home/Home';
 import {Posts} from './Posts/Posts';
 import {Page} from './Page/page';
 import {Media} from './Media/Media';
+import {Post} from './Post/post';
 
 const routes: RouterConfig = [
     {
@@ -22,13 +23,29 @@ const routes: RouterConfig = [
         path: 'posts',
         component: Posts
     },
+    // {
+    //     path: 'post/:id',
+    //     component: Post,
+    //     children: [
+    //         {path: '', component: Post},
+    //         {path: 'post/:id', component: Post}
+    //     ]
+    // },
     {
         path: 'posts/:category',
-        component: Posts
+        component: Posts,
+        children: [
+            {path: '', component: Post},
+            {path: 'post/:id', component: Post}
+        ]
     },
     {
         path: 'search/:search',
-        component: Posts
+        component: Posts,
+        children: [
+            {path: '', component: Post},
+            {path: 'post/:id', component: Post}
+        ]
     },
     {
         path: 'media',
