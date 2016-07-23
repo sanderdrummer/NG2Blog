@@ -17,5 +17,4 @@ export const PostsTemplate = `
     <div *ngIf="page < pages" (click)="nextPage()">mehr Posts</div>
 </ul>
 <router-outlet></router-outlet>
-<post [post]="selectedPost.post"></post>
 `;

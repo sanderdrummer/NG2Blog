@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Control} from '@angular/common';
 import {Observable} from 'rxjs/Observable';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
 import {SelectedPostService} from '../components/Post/postService';
 
 @Component({
@@ -23,5 +23,8 @@ import {SelectedPostService} from '../components/Post/postService';
 })
 export class AppComponent {
 
-  constructor() {}
+  constructor(private router:ActivatedRoute) {
+      router.params.subscribe(() => {
+      })
+  }
 }

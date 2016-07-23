@@ -16,16 +16,23 @@ export class Post implements OnInit {
     constructor(private router:ActivatedRoute, private selectedPost:SelectedPostService) {
         this.post = {};
         router.params.subscribe((params:any) =>{
+            if (!params.id) {
+                document.body.classList.remove('noScroll');
+            }
+
             if (selectedPost && selectedPost.postList && selectedPost.postList.length) {
                 this.post = selectedPost.postList.reduce((acc, post) =>{
                     if (post.id === Number(params.id)) {
                         acc = post;
+                        document.body.classList.add('noScroll');
                     }
                     return acc;
                 }, this.post);
            } else {
              // todo fetch post
            }
+
+
         });
     }
 
