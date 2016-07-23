@@ -2,19 +2,18 @@
  * Created by funkp on 21.07.2016.
  */
 export const PostsTemplate = `
-    <div *ngIf="loading">LADDEEEE</div>
-    <search-box></search-box>
-    <H1>Das ist ein Test</H1>
-    <search-box></search-box>
-    <p>ganz viele Posts</p>
-    {{pages}}
-<ul>
-    <li *ngFor="let post of postList;  let i = index">
-    <a [routerLink]="['post', post.id]">{{i}} {{post.title.rendered}}</a>
-    <div [innerHTML]="post.excerpt.rendered"></div>
-    </li>
-    
-    <div *ngIf="page < pages" (click)="nextPage()">mehr Posts</div>
-</ul>
+<div *ngIf="loading" class="loader"></div>
+<search-box></search-box>
+<div class="postListWrapper">
+    <ul class="postList">
+        <li class="listItem" *ngFor="let post of postList;  let i = index">
+            <a class="listItemTitle" [routerLink]="['post', post.id]">{{post.title.rendered}}</a>
+            <img class="listItemMedia" *ngIf="post.featured_media" src="{{post.featured_media}}" alt="">
+            <div class="listItemContent" [innerHTML]="post.excerpt.rendered"></div>
+        </li>
+        
+        <div class="listItemPaging" *ngIf="page < pages" (click)="nextPage()">mehr Posts</div>
+    </ul>
+</div>
 <router-outlet></router-outlet>
 `;

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Control} from '@angular/common';
 import {Observable} from 'rxjs/Observable';
-import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
+import {ROUTER_DIRECTIVES, ActivatedRoute, Router, RoutesRecognized} from '@angular/router';
 import {SelectedPostService} from '../components/Post/postService';
 
 @Component({
@@ -23,8 +23,16 @@ import {SelectedPostService} from '../components/Post/postService';
 })
 export class AppComponent {
 
-  constructor(private router:ActivatedRoute) {
-      router.params.subscribe(() => {
+  constructor(private router:Router) {
+      router.events.subscribe((event:any) => {
+          if (event instanceof RoutesRecognized ) {
+              document.body.className = '';
+              event.url.split('/').forEach((className) => {
+                  if (className) {
+                      document.body.classList.add(className);
+                  }
+              });
+          }
       })
   }
 }

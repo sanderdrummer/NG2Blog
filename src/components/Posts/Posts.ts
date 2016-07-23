@@ -61,4 +61,16 @@ export class Posts implements OnInit {
         this.page +=1;
         this.getPosts(this.page);
     }
+
+    handleBodyClasses() {
+
+        document.body.className = '';
+
+        if (this.search) {
+            document.body.classList.add('search');
+        }
+        if (this.category) {
+            document.body.classList.add(`category${this.category}`);
+        }
+    }
 }

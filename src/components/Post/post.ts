@@ -38,4 +38,8 @@ export class Post implements OnInit {
 
     ngOnInit() {
     }
+
+    back() {
+        window.history.back();
+    }
 }
