@@ -1,5 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+
 
 module.exports = {
   cache: true,
@@ -36,6 +39,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.ts$/, exclude: [/\.spec\.ts$/, 'node_modules'], loader: 'ts' },
+      {test: /\.less/, loader: 'style!css!less'}
     ],
 
     noParse: [/zone\.js\/dist\/.+/]
@@ -46,7 +50,7 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
+      new HtmlWebpackPlugin({
       title: 'Angular2 Webpack Polyfill Demo',
       chunksSortMode: 'auto',
       filename: 'index.html',
