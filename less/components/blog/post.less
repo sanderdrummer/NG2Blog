@@ -12,6 +12,21 @@
 .noScroll {
   overflow: hidden;
 }
+
+post {
+  .postContainer {
+    max-width: @width;
+    margin: 0 auto;
+    box-shadow: 1px 1px 1px rgba(10,10,10, 0.5);
+  }
+  .postTitle {}
+  .postContent {}
+  .paging {
+
+  }
+}
+
+
 .band {
   posts {
     .postListWrapper {
@@ -24,7 +39,10 @@
     .listItem{
       flex: 1 1 25%;
       margin: @leading;
-      box-shadow: 2px 2px 10px rgba(10,10,10, 0.5);
+      box-shadow: 1px 1px 1px rgba(10,10,10, 0.5);
+      &:hover{
+        box-shadow: 2px 2px 10px rgba(10,10,10, 0.5);
+      }
     }
 
     .listItemTitle{
@@ -43,5 +61,36 @@
     }
 
 
+  }
+}
+
+posts {
+  .postListWrapper {
+    max-width: @width;
+    margin: 0 auto;
+  }
+
+  .postList{
+    //.flex();
+  }
+
+  .listItem{
+    margin-bottom: 3 * @leading;
+    box-shadow: 0px 0px 1px rgba(10,10,10, 0.5);
+  }
+
+  .listItemTitle{
+    text-align: center;
+    display: block;
+    padding: @leading / 2;
+
+  }
+
+  .listItemMedia{
+    width: 100%;
+  }
+
+  .listItemContent{
+    padding: @leading / 2;
   }
 }

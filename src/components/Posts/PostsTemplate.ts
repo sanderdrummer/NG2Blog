@@ -6,7 +6,7 @@ export const PostsTemplate = `
 <search-box></search-box>
 <div class="postListWrapper">
     <ul class="postList">
-        <li class="listItem" *ngFor="let post of postList;  let i = index">
+        <li class="listItem" @loadingState="active" *ngFor="let post of postList;  let i = index">
             <a class="listItemTitle" [routerLink]="['post', post.id]">{{post.title.rendered}}</a>
             <img class="listItemMedia" *ngIf="post.featured_media" src="{{post.featured_media}}" alt="">
             <div class="listItemContent" [innerHTML]="post.excerpt.rendered"></div>
