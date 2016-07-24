@@ -3,7 +3,6 @@
  */
 export const PostsTemplate = `
 <div *ngIf="loading" class="loader"></div>
-<search-box></search-box>
 <div class="postListWrapper">
     <ul class="postList">
         <li class="listItem" @loadingState="active" *ngFor="let post of postList;  let i = index">
