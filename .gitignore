@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 dist/
 node_modules/
 tmp/
 typings/
 .idea/
+=======
+build
+node_modules
+typings
+>>>>>>> f892ab89bcaf7bbc40dcb80e9268c152189c0182

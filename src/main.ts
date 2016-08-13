@@ -1,12 +1,11 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { HTTP_PROVIDERS } from '@angular/http';
-import 'rxjs/add/operator/map';
-import { enableProdMode } from '@angular/core';
-import { NG2BlogAppComponent, environment } from './app/';
+import {enableProdMode}  from '@angular/core';
+import {bootstrap}       from '@angular/platform-browser-dynamic'
+import {HTTP_PROVIDERS} from '@angular/http';
+import {AppComponent}    from './app/app.component'
+import {routerProviders} from './components/routes';
+declare function require(string): string;
 
-if (environment.production) {
-  enableProdMode();
-}
+require('../less/main.less');
 enableProdMode();
 
-bootstrap(NG2BlogAppComponent, [HTTP_PROVIDERS]);
+bootstrap(AppComponent, [HTTP_PROVIDERS, routerProviders]);

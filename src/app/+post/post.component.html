@@ -1,6 +1,0 @@
-<div (click)="showContent()">
-	<h1>{{post.title}}</h1>
-	<div *ngIf="excerpt" [innerHTML]="post.excerpt"></div>	
-</div>
-
-<div *ngIf="!excerpt" [innerHTML]="post.content"></div>
