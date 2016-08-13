@@ -7,20 +7,28 @@ module WP {
 
         static $inject = [
             '$stateParams',
-            'postService'
+            'postService',
+            'appCache'
         ];
         constructor(
             private $stateParams,
-            private postService
+            private postService,
+            private appCache
         ) {
 
         }
 
         $onInit() {
-            this.postService.getPost(this.$stateParams.id)
-            .then(res => {
-                this.active = res.data;
-            })
+            const id = this.$stateParams.id;
+            console.log(id, this.appCache.cache.get(id)  );
+            if (this.appCache.cache.get(id)) {
+                this.active = this.appCache.cache.get(id);
+            } else {
+                this.postService.getPost(id)
+                .then(res => {
+                    this.active = res.data;
+                })
+            }
         }
 
         back() {

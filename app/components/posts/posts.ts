@@ -13,11 +13,13 @@ module WP {
 
         static $inject = [
             '$stateParams',
-            'postsService'
+            'postsService',
+            'appCache'
         ];
         constructor(
             private $stateParams,
-            private postsService
+            private postsService,
+            private appCache
         ) {
             this.page = 1;
             this.query = '';
@@ -33,6 +35,7 @@ module WP {
             this.postsService.getPosts(this.$stateParams.category, this.page, this.query)
                 .then(res => {
                     this.category = this.$stateParams.category;
+                    this.appCache.cacheList(res.data);
                     this.list = this.list.concat(res.data);
                     this.pages = res.headers('X-WP-TotalPages');
                     this.loading = false;
