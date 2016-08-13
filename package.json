@@ -1,34 +1,30 @@
 {
-  "name": "angular2-quickstart",
+  "name": "ngBlog",
   "version": "1.0.0",
+  "author": "Tobias Pickel",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js",
-    "typings": "typings",
-    "postinstall": "typings install"
-  },
-  "license": "ISC",
-  "dependencies": {
-    "@angular/common": "^2.0.0-rc.4",
-    "@angular/compiler": "^2.0.0-rc.4",
-    "@angular/core": "^2.0.0-rc.4",
-    "@angular/http": "^2.0.0-rc.4",
-    "@angular/router": "^3.0.0-beta.2",
-    "@angular/platform-browser": "^2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "^2.0.0-rc.4",
-    "rxjs": "5.0.0-beta.9",
-    "zone.js": "0.6.12"
+    "start": "gulp",
+    "build": "gulp build",
+    "test": "karma start --singleRun false"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^2.21.0",
-    "ts-loader": "^0.8.2",
-    "typescript": "^1.8.10",
-    "typings": "^1.3.0",
-    "webpack": "^2.1.0-beta.13",
-    "webpack-dev-server": "^2.1.0-beta.0",
-    "css-loader": "^0.23.1",
-    "less": "^2.5.3",
-    "less-loader": "^2.2.2",
-    "style-loader": "^0.13.0"
+    "eslint": "^2.4.0",
+    "event-stream": "^3.3.2",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-less": "*",
+    "gulp-less-sourcemap": "^1.4.3",
+    "gulp-minify-css": "*",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-ng-html2js": "^0.2.2",
+    "gulp-order": "*",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.4",
+    "gulp-typescript": "*",
+    "typescript": "*",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-ie-launcher": "^1.0.0",
+    "protractor": "^3.3.0",
+    "protractor-jasmine2-html-reporter": "0.0.6"
   }
 }
